@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+branch="$1"
+base="${2:-origin/dev}"
+
+if [[ -z "$branch" ]]; then
+    echo "Usage: open-worktree <branch> [base]"
+    echo "  branch: Name of the branch/worktree to create"
+    echo "  base:   Base branch (default: dev)"
+    exit 1
+fi
+
+worktree_name="${branch//\//-}"
+worktree_path=".worktrees/$worktree_name"
+
+git worktree add -b "$branch" "$worktree_path" "$base"
+
+cd "$worktree_path"
+
+if [[ -x "./setup" ]]; then
+    ./setup
+fi
+
+claude
+
+exec $SHELL

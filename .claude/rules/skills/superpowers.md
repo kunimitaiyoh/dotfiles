@@ -1,0 +1,3 @@
+- When asking a user a question with the superpowers:brainstorm skill, if it is appropriate for the user to select from options, use AskUserQuestion tool.
+- When using the superpowers:brainstorm skills, also let Codex CLI suggest questions.
+- When planning in superpowers:write-plan, omit committing steps.
