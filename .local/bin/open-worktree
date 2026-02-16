@@ -15,9 +15,10 @@ fi
 worktree_name="${branch//\//-}"
 worktree_path=".worktrees/$worktree_name"
 
-git worktree add -b "$branch" "$worktree_path" "$base"
+git worktree add -b "$branch" "$worktree_path"
 
 cd "$worktree_path"
+git reset --hard "$base"
 
 if [[ -x "./setup" ]]; then
     ./setup
