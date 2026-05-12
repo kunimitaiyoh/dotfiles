@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -e
+
+force_delete=false
+branch=""
+
+for arg in "$@"; do
+    if [[ "$arg" == "-D" ]]; then
+        force_delete=true
+    else
+        branch="$arg"
+    fi
+done
+
+if [[ -z "$branch" ]]; then
+    toplevel="$(git rev-parse --show-toplevel)"
+    branch="$(git branch --show-current)"
+    main_git_dir="$(git rev-parse --git-common-dir)"
+    main_repo="$(cd "$main_git_dir" && cd .. && pwd)"
+
+    if [[ "$toplevel" == "$main_repo" ]]; then
+        echo "Error: not inside a worktree. Specify a branch name."
+        echo "Usage: close-worktree [-D] [branch]"
+        exit 1
+    fi
+
+    cd "$main_repo"
+fi
+
+worktree_name="${branch//\//-}"
+worktree_path=".worktrees/$worktree_name"
+
+git worktree remove "$worktree_path"
+
+if [[ "$force_delete" == true ]]; then
+    git branch -D "$branch"
+else
+    git branch -d "$branch"
+fi
