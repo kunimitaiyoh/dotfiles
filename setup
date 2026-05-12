@@ -2,3 +2,7 @@
 #!/bin/bash
 
 curl -fsSL https://claude.ai/install.sh | bash
+
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cp -r "$DOTFILES_DIR/.claude/." "$HOME/.claude/"
