@@ -1,12 +1,15 @@
 {
   "permissions": {
     "allow": [
+      "Bash(echo:*)",
       "Bash(find:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
+      "Bash(git checkout *)",
       "Bash(git fetch:*)",
+      "Bash(git log:*)",
       "Bash(git ls-tree:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
@@ -14,6 +17,7 @@
       "Bash(npx tsc:*)",
       "Bash(terraform fmt:*)",
       "Bash(terraform version:*)",
+      "Bash(wc:*)",
       "WebSearch",
       "WebFetch(domain:*.codejam.info)",
       "WebFetch(domain:*.figma.com)",
@@ -32,43 +36,12 @@
       "WebFetch(domain:storybook.js.org)",
       "WebFetch(domain:zenn.dev)",
       "mcp__chrome-devtools__list_pages",
-      "mcp__codex__codex-reply",
-      "mcp__codex__codex",
       "mcp__figma__get_design_context",
       "mcp__figma__get_screenshot",
       "mcp__ide__getDiagnostics"
     ],
     "deny": [],
     "defaultMode": "default"
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe -NoProfile -Command \"(New-Object System.Media.SoundPlayer \\\"C:\\\\Windows\\\\Media\\\\Ring06.wav\\\").PlaySync()\""
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "powershell.exe -NoProfile -Command \"(New-Object System.Media.SoundPlayer \\\"C:\\\\Windows\\\\Media\\\\Alarm04.wav\\\").PlaySync()\""
-          }
-        ]
-      }
-    ]
-  },
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
   },
   "language": "Japanese",
   "autoUpdatesChannel": "stable",
