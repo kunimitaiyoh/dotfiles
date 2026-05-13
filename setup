@@ -6,3 +6,5 @@ curl -fsSL https://claude.ai/install.sh | bash
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cp -r "$DOTFILES_DIR/.claude/." "$HOME/.claude/"
+
+grep -q "^export DOTFILES_DIR=" "$HOME/.bashrc" 2>/dev/null || echo "export DOTFILES_DIR=\"$DOTFILES_DIR\"" >> "$HOME/.bashrc"

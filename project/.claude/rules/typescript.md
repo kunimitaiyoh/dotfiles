@@ -1,0 +1,2 @@
+- Prioritize `function` over `const` for function definitions.
+- Utilize hoisting, arranging the code so that subordinate functions (those called by other functions) are positioned further down.
