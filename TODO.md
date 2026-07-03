@@ -1,0 +1,1 @@
+- [ ] setup に .local/bin を追加する

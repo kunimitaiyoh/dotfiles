@@ -9,6 +9,7 @@
       "Bash(gh pr diff *)",
       "Bash(gh pr list *)",
       "Bash(gh pr view *)",
+      "Bash(git check-ignore *)",
       "Bash(git checkout *)",
       "Bash(git diff *)",
       "Bash(git fetch *)",
