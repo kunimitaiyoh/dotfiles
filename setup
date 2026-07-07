@@ -5,6 +5,7 @@ if ! command -v rg >/dev/null 2>&1; then
   if sudo apt-get update; then
     sudo apt-get install -y ripgrep
   else
+    echo "Error: Failed to update package index for ripgrep installation" >&2
     exit 1
   fi
 fi
