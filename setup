@@ -1,6 +1,14 @@
 
 #!/bin/bash
 
+if ! command -v rg >/dev/null 2>&1; then
+  if sudo apt-get update; then
+    sudo apt-get install -y ripgrep
+  else
+    echo "Warning: Failed to update package index; skipping ripgrep installation" >&2
+  fi
+fi
+
 curl -fsSL https://claude.ai/install.sh | bash
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
