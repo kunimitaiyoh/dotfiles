@@ -15,6 +15,7 @@
       "Bash(git fetch *)",
       "Bash(git grep *)",
       "Bash(git log *)",
+      "Bash(git ls-remote *)",
       "Bash(git ls-tree *)",
       "Bash(grep *)",
       "Bash(ls *)",
@@ -51,6 +52,10 @@
     ],
     "deny": [],
     "defaultMode": "default"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
   },
   "language": "Japanese",
   "autoUpdatesChannel": "stable",
